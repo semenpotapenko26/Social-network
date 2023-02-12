@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from core.models import PubDateModel, CreatedModel
+from .constants import TEXT_POST
 
 User = get_user_model()
 
@@ -39,7 +40,7 @@ class Post(PubDateModel):
         ordering = ['-pub_date']
 
     def __str__(self):
-        return self.text[:15]
+        return self.text[:TEXT_POST]
 
 
 class Comment(CreatedModel):
@@ -60,7 +61,7 @@ class Comment(CreatedModel):
         ordering = ['created']
 
     def __str__(self):
-        return self.text[:15]
+        return self.text[:TEXT_POST]
 
 
 class Follow(models.Model):

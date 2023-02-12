@@ -1,1 +1,3 @@
 PER_PAGE = 10
+
+TEXT_POST = 15
